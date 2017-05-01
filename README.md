@@ -71,6 +71,35 @@
     - SELECT opis, cena FROM towar WHERE cena IN (SELECT cena FROM towar GROUP BY cena HAVING count (cena) > 1);
     - SELECT opis, koszt FROM towar WHERE koszt IN (SELECT koszt FROM towar GROUP BY koszt HAVING count (koszt) > 1);
 ```
+* **WHERE EXISTS** - gdzie istnieje
+```sql
+    - SELECT nr, imie, nazwisko FROM klient K
+        WHERE EXISTS (
+        SELECT *
+            FROM zamowienie Z INNER JOIN pozycja P
+            ON K.nr=Z.klient_nr
+            AND P.zamowienie_nr=Z.nr
+      );
+    - SELECT nr, imie, nazwisko FROM klient 
+        WHERE nr IN (
+        SELECT klient_nr
+            FROM zamowienie 
+            WHERE nr NOT IN (
+                SELECT zamowienie_nr 
+                FROM pozycja
+            )
+      );
+    - SELECT nr, imie, nazwisko FROM klient 
+        WHERE nr IN (
+        SELECT klient_nr 
+            FROM zamowienie Z 
+            WHERE NOT EXISTS (
+                SELECT *
+                FROM pozycja P 
+                WHERE Z.nr = P.zamowienie_nr
+            )
+      );
+```
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
 * **UPDATE test SET imie='Piotr' WHERE id=1** - zmienia *imie* w tabeli test w wierszu o *id=1*
 * **ALTER TABLE test ADD COLUMN data** - w tabeli test dodaj kolumnę o nazwie *data*
