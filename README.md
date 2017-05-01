@@ -12,7 +12,7 @@
 * **\d nazwa_tabeli** - wyświetla szczegóły tabeli
 
 ## Polecenia SQL
-:elephant: ### Tworzenie tabel
+### :elephant: Tworzenie tabel
 * **CREATE TABLE test** - tworzy tabelę o nazwie test
 * **ON DELETE CASCADE** - usuwając pewien element w innej tabeli, usuwa też dane w tej gdzie zostało to zadeklarowane
 * **REFERENCES test(id)** - tworzy powiązanie aktualnej tabeli z id w tabeli test
