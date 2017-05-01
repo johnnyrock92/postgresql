@@ -14,11 +14,13 @@
 ### Polecenia SQL
 ###### Tworzenie tabel
 * **CREATE TABLE test** - tworzy tabelę o nazwie test
-* **INSERT INTO test (atrybut1, atrybut2) VALUES ('wartość1','wartość2')** - wypełnia danymi tabelę test
-* **DROP TABLE test** - usuwa tabelę test razem z danymi
 * **ON DELETE CASCADE** - usuwając pewien element w innej tabeli, usuwa też dane w tej gdzie zostało to zadeklarowane
 * **REFERENCES test(id)** - tworzy powiązanie aktualnej tabeli z id w tabeli test
 * **UNIQUE (id)** - używamy gdy chcemy , aby atrybut był unikatowy, niepowtarzalny np. id, pesel, nr dowodu osobistego
+###### Dodawanie danych
+* **INSERT INTO test (atrybut1, atrybut2) VALUES ('wartość1','wartość2')** - wypełnia danymi tabelę test
+###### Usuwanie tabel
+* **DROP TABLE test** - usuwa tabelę test razem z danymi
 ###### Tworzenie zapytań
 * **SELECT * FROM test** - wyświetla/wyciąga wszystkie dane z tabeli test
 * **SELECT * FROM test WHERE imie='Jan'** - wyświetla wszystkie dane z tabeli test gdzie atrybut *imie* ma wartość *Jan*
