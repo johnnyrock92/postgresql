@@ -23,8 +23,9 @@
 * **DROP TABLE test** - usuwa tabelę test razem z danymi
 ###### Tworzenie zapytań
 * [**SELECT * FROM test**](https://github.com/johnnyrock92/postgresql/blob/master/order_by.sql) - wyświetla/wyciąga wszystkie dane z tabeli test
+* **ORDER BY** - sortowanie
 ```
-- SELECT * FROM klient ORDER BY miasto;
+    - SELECT * FROM klient ORDER BY miasto;
     - SELECT * FROM towar ORDER BY opis;
     - SELECT * FROM zamowienie ORDER BY koszt_wysylki;
     - SELECT * FROM kod_kreskowy ORDER BY kod;
@@ -37,7 +38,6 @@
 * **ALTER TABLE test ADD COLUMN data** - w tabeli test dodaj kolumnę o nazwie *data*
 * **ALTER TABLE test DROP COLUMN adres** - w tabeli test usu kolumnę o nazwie *adres*
 * **ALTER TABLE test RENAME COLUMN data TO urodzony** - w tabeli test zmie nazwę kolumny *data* na *urodzony*
-* **ORDER BY** - sortowanie
 * **DESC** - kolejność malejąca
 * **ASC** - kolejność rosnąca
 * **AS** - tworzy alias (przyjazna nazwa) do kolumny w której przechowuje np. wynik odejmowania lub dodawania innych kolumn
