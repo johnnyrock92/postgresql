@@ -36,7 +36,7 @@
     - DROP TABLE towar;
     - DROP TABLE klient;
 ```
-### Tworzenie zapytań :?: 
+### Tworzenie zapytań :question:
 * **SELECT * FROM test** - wyświetla/wyciąga wszystkie dane z tabeli test
 * **ORDER BY** - sortowanie
 ```sql
