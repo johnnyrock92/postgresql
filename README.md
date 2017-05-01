@@ -99,8 +99,8 @@
                 WHERE Z.nr = P.zamowienie_nr
             )
       );
-      [WIĘCEJ PRZYKŁADÓW]()
 ```
+[WIĘCEJ PRZYKŁADÓW](https://github.com/johnnyrock92/postgresql/blob/master/inner_join.sql)
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
 * **UPDATE test SET imie='Piotr' WHERE id=1** - zmienia *imie* w tabeli test w wierszu o *id=1*
 * **ALTER TABLE test ADD COLUMN data** - w tabeli test dodaj kolumnę o nazwie *data*
