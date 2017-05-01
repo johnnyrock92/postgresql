@@ -37,4 +37,4 @@
 * **GROUP BY** - złącza powtórzenia
 * **HAVING count(nazwisko)>1** - wyświetli nazwiska mające powtórzenia
 * **ROUND(cena, 2)** - zaokrągli do dwóch miejsc po przecinku
-* **SELECT * FROM klient WHERE NOT miasto='Gdańsk'** - wyświetli wszystkie wiersze z tabeli test gdzie nie występuje w atrybucie *miasto* słowo *Gdansk*
+* **SELECT * FROM test WHERE NOT miasto='Gdańsk'** - wyświetli wszystkie wiersze z tabeli test gdzie nie występuje w atrybucie *miasto* słowo *Gdansk*
