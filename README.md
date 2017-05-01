@@ -12,12 +12,12 @@
 * **\d nazwa_tabeli** - wyświetla szczegóły tabeli
 
 ## Polecenia SQL
-### Tworzenie tabel :elephant: 
+### Tworzenie tabel :office:
 * **CREATE TABLE test** - tworzy tabelę o nazwie test
 * **ON DELETE CASCADE** - usuwając pewien element w innej tabeli, usuwa też dane w tej gdzie zostało to zadeklarowane
 * **REFERENCES test(id)** - tworzy powiązanie aktualnej tabeli z id w tabeli test
 * **UNIQUE (id)** - używamy gdy chcemy , aby atrybut był unikatowy, niepowtarzalny np. id, pesel, nr dowodu osobistego
-### Dodawanie danych :elephant: 
+### Dodawanie danych :heavy_plus_sign:
 * **INSERT INTO test (atrybut1, atrybut2) VALUES ('wartość1','wartość2')** - wypełnia danymi tabelę test
 ```sql
     - INSERT INTO kod_kreskowy (kod, towar_nr) VALUES ('1234567891234', 14);
@@ -25,7 +25,7 @@
     - INSERT INTO klient (nazwisko, kod_pocztowy) VALUES (E'O\'Hara', '84-200');
     - INSERT INTO zamowienie (klient_nr, data_zlozenia, koszt_wysylki) VALUES (1, '2017-04-25', '8.99');
 ```
-### Usuwanie tabel :elephant: 
+### Usuwanie tabel :x:
 * **DROP TABLE test** - usuwa tabelę test razem z danymi
 ```sql
     - DROP VIEW towar_zysk;
@@ -36,7 +36,7 @@
     - DROP TABLE towar;
     - DROP TABLE klient;
 ```
-### Tworzenie zapytań :elephant: 
+### Tworzenie zapytań :?: 
 * **SELECT * FROM test** - wyświetla/wyciąga wszystkie dane z tabeli test
 * **ORDER BY** - sortowanie
 ```sql
