@@ -99,6 +99,7 @@
                 WHERE Z.nr = P.zamowienie_nr
             )
       );
+      [WIĘCEJ PRZYKŁADÓW]()
 ```
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
 * **UPDATE test SET imie='Piotr' WHERE id=1** - zmienia *imie* w tabeli test w wierszu o *id=1*
