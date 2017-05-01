@@ -40,4 +40,4 @@
 * **SELECT * FROM test WHERE NOT miasto='Gdańsk'** - wyświetli wszystkie wiersze z tabeli test gdzie nie występuje w atrybucie *miasto* słowo *Gdansk*
 * **SELECT * FROM test WHERE telefon IS NULL** - wyświetli wszystkie wiersze z tabeli test gdzie atrybut *telefon* jest pusty
 * **SELECT * FROM test WHERE opis LIKE '%piłka%'** - wyświetli wszystkie wiersze z tabeli test gdzie atrybut *opis* zawiera w zdaniu słowo *piłka*
-* **SELECT * FROM zamowienie WHERE data_wysylki BETWEEN '2017/04/01' AND '2017/05/01'** - wyświetli wszystkie wiersze z tabeli zamowienie gdzie atrybut *data_wysylki*
+* **SELECT * FROM zamowienie WHERE data_wysylki BETWEEN '2017/04/01' AND '2017/05/01'** - wyświetli wszystkie wiersze z tabeli zamowienie gdzie atrybut *data_wysylki* to zakres dat od do
