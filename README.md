@@ -24,7 +24,7 @@
 ###### Tworzenie zapytań
 * **SELECT * FROM test** - wyświetla/wyciąga wszystkie dane z tabeli test
 * **ORDER BY** - sortowanie
-```
+```sql
     - SELECT nazwisko, kod_pocztowy, miasto, ulica_dom FROM klient;
     - SELECT * FROM klient ORDER BY miasto;
     - SELECT * FROM towar ORDER BY opis;
@@ -34,7 +34,7 @@
 ```
 * **AS** - tworzy alias (przyjazna nazwa) do kolumny w której przechowuje np. wynik odejmowania lub dodawania innych kolumn
 * **ROUND(cena, 2)** - zaokrągli do dwóch miejsc po przecinku
-```
+```sql
     - SELECT *, ROUND((cena-koszt)/koszt*100, 2) || '%' AS procent FROM towar;
     - SELECT *, (data_wysylki-data_zlozenia) AS czas_realizacji FROM zamowienie;
 ```
