@@ -36,3 +36,5 @@
 * **SELECT nazwisko, count(nazwisko) FROM klient GROUP BY nazwisko** - wyświetla listę nazwisk dodając nową kolumnę zliczającą ilość powtórzen danego nazwiska
 * **GROUP BY** - złącza powtórzenia
 * **HAVING count(nazwisko)>1** - wyświetli nazwiska mające powtórzenia
+* **ROUND(cena, 2)** - zaokrągli do dwóch miejsc po przecinku
+* **SELECT * FROM klient WHERE NOT miasto='Gdańsk'** - wyświetli wszystkie wiersze z tabeli test gdzie nie występuje w atrybucie *miasto* słowo *Gdansk*
