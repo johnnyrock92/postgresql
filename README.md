@@ -25,12 +25,18 @@
 * **SELECT * FROM test** - wyświetla/wyciąga wszystkie dane z tabeli test
 * **ORDER BY** - sortowanie
 ```
+    - SELECT nazwisko, kod_pocztowy, miasto, ulica_dom FROM klient;
     - SELECT * FROM klient ORDER BY miasto;
     - SELECT * FROM towar ORDER BY opis;
     - SELECT * FROM zamowienie ORDER BY koszt_wysylki;
     - SELECT * FROM kod_kreskowy ORDER BY kod;
-    - SELECT nazwisko, kod_pocztowy, miasto, ulica_dom FROM klient;
     - SELECT nr, data_zlozenia FROM zamowienie ORDER BY nr;
+```
+* **AS** - tworzy alias (przyjazna nazwa) do kolumny w której przechowuje np. wynik odejmowania lub dodawania innych kolumn
+* **ROUND(cena, 2)** - zaokrągli do dwóch miejsc po przecinku
+```
+    - SELECT *, ROUND((cena-koszt)/koszt*100, 2) || '%' AS procent FROM towar;
+    - SELECT *, (data_wysylki-data_zlozenia) AS czas_realizacji FROM zamowienie;
 ```
 * **SELECT * FROM test WHERE imie='Jan'** - wyświetla wszystkie dane z tabeli test gdzie atrybut *imie* ma wartość *Jan*
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
@@ -40,13 +46,13 @@
 * **ALTER TABLE test RENAME COLUMN data TO urodzony** - w tabeli test zmie nazwę kolumny *data* na *urodzony*
 * **DESC** - kolejność malejąca
 * **ASC** - kolejność rosnąca
-* **AS** - tworzy alias (przyjazna nazwa) do kolumny w której przechowuje np. wynik odejmowania lub dodawania innych kolumn
+
 * **DISTINCT** - unikalne dane
 * **INNER JOIN tabela ON** - złączenie
 * **SELECT nazwisko, count(nazwisko) FROM klient GROUP BY nazwisko** - wyświetla listę nazwisk dodając nową kolumnę zliczającą ilość powtórzen danego nazwiska
 * **GROUP BY** - złącza powtórzenia
 * **HAVING count(nazwisko)>1** - wyświetli nazwiska mające powtórzenia
-* **ROUND(cena, 2)** - zaokrągli do dwóch miejsc po przecinku
+
 * **SELECT * FROM test WHERE NOT miasto='Gdańsk'** - wyświetli wszystkie wiersze z tabeli test gdzie nie występuje w atrybucie *miasto* słowo *Gdansk*
 * **SELECT * FROM test WHERE telefon IS NULL** - wyświetli wszystkie wiersze z tabeli test gdzie atrybut *telefon* jest pusty
 * **SELECT * FROM test WHERE opis LIKE '%piłka%'** - wyświetli wszystkie wiersze z tabeli test gdzie atrybut *opis* zawiera w zdaniu słowo *piłka*
