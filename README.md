@@ -1,6 +1,6 @@
 # postgresql
 
-### Polecenia powłoki
+## Polecenia powłoki
 * **psql** - uruchamia powłokę Postgresa
 * **\?** - uruchamia pomoc powłoki
 * **\h** - uruchamia pomoc SQL
