@@ -100,7 +100,18 @@
             )
       );
 ```
-[WIĘCEJ PRZYKŁADÓW](https://github.com/johnnyrock92/postgresql/blob/master/inner_join.sql)
+[WIĘCEJ PRZYKŁADÓW INNER JOIN](https://github.com/johnnyrock92/postgresql/blob/master/inner_join.sql)
+* **min(atrybut)** - zwraca minimalną wartość kolumny
+* **avg(atrybut)** - zwraca średnią wartość kolumny
+* **max(atrybut)** - zwraca maksymalną wartość kolumny
+```sql
+    - SELECT imie, nazwisko,
+        min(data_wysylki-data_zlozenia) AS min_czas_oczekiwania,
+        round(avg(data_wysylki-data_zlozenia)) AS sredni_czas_oczekiwania,
+        max(data_wysylki-data_zlozenia) AS max_czas_oczekiwania FROM 
+    (klient INNER JOIN zamowienie ON klient.nr = zamowienie.klient_nr)
+    GROUP BY imie, nazwisko;
+```
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
 * **UPDATE test SET imie='Piotr' WHERE id=1** - zmienia *imie* w tabeli test w wierszu o *id=1*
 * **ALTER TABLE test ADD COLUMN data** - w tabeli test dodaj kolumnę o nazwie *data*
