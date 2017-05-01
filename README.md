@@ -109,8 +109,35 @@
         min(data_wysylki-data_zlozenia) AS min_czas_oczekiwania,
         round(avg(data_wysylki-data_zlozenia)) AS sredni_czas_oczekiwania,
         max(data_wysylki-data_zlozenia) AS max_czas_oczekiwania FROM 
-    (klient INNER JOIN zamowienie ON klient.nr = zamowienie.klient_nr)
-    GROUP BY imie, nazwisko;
+      (klient INNER JOIN zamowienie ON klient.nr = zamowienie.klient_nr)
+      GROUP BY imie, nazwisko;
+```
+* **sum(atrybut)** - sumuje atrybut dla poszczególnych wystąpien
+```sql
+    - SELECT imie, nazwisko,
+        sum(ilosc) AS ilosc_szt,
+        round(avg(data_wysylki-data_zlozenia)) AS sredni_czas_oczekiwania FROM
+      (( klient INNER JOIN zamowienie ON klient.nr = zamowienie.klient_nr)
+      INNER JOIN pozycja ON zamowienie.nr = pozycja.zamowienie_nr)
+      INNER JOIN towar ON pozycja.towar_nr = towar.nr
+      WHERE towar.opis LIKE 'chusteczki%'
+      GROUP BY imie, nazwisko;
+    - SELECT klient.nr, imie, nazwisko,
+        sum(ilosc) AS szt_towarów, 
+        sum(ilosc * cena) AS suma,
+        sum(ilosc * (cena - koszt)) AS zysk
+      FROM (  (  ( klient 
+                   INNER JOIN zamowienie 
+                      ON klient.nr = zamowienie.klient_nr
+                 )
+                 INNER JOIN pozycja
+                    ON zamowienie.nr = pozycja.zamowienie_nr
+              )
+              INNER JOIN towar
+                 ON pozycja.towar_nr = towar.nr
+          )
+      GROUP BY klient.nr, imie, nazwisko
+      ORDER BY nazwisko;
 ```
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
 * **UPDATE test SET imie='Piotr' WHERE id=1** - zmienia *imie* w tabeli test w wierszu o *id=1*
