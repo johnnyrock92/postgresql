@@ -24,7 +24,7 @@
 ###### Tworzenie zapytań
 * [**SELECT * FROM test**](https://github.com/johnnyrock92/postgresql/blob/master/order_by.sql) - wyświetla/wyciąga wszystkie dane z tabeli test
 ```
-    - SELECT * FROM klient ORDER BY miasto;
+- SELECT * FROM klient ORDER BY miasto;
     - SELECT * FROM towar ORDER BY opis;
     - SELECT * FROM zamowienie ORDER BY koszt_wysylki;
     - SELECT * FROM kod_kreskowy ORDER BY kod;
