@@ -52,7 +52,17 @@
     - SELECT * FROM zamowienie WHERE data_wysylki BETWEEN '2017/02/01' AND '2017/02/28';
     - SELECT *, (data_wysylki-data_zlozenia) AS czas_realizacji FROM zamowienie WHERE data_wysylki IS NOT NULL;
 ```
-
+* **INNER JOIN tabela ON** - złączenie tabel
+```sql
+    - SELECT imie, nazwisko
+        FROM klient INNER JOIN zamowienie
+        ON klient.nr=zamowienie.klient_nr
+        ORDER BY nazwisko;
+    - SELECT DISTINCT imie, nazwisko
+        FROM klient INNER JOIN zamowienie
+        ON klient.nr=zamowienie.klient_nr
+        ORDER BY nazwisko;
+```
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
 * **UPDATE test SET imie='Piotr' WHERE id=1** - zmienia *imie* w tabeli test w wierszu o *id=1*
 * **ALTER TABLE test ADD COLUMN data** - w tabeli test dodaj kolumnę o nazwie *data*
@@ -61,7 +71,7 @@
 * **DESC** - kolejność malejąca
 * **ASC** - kolejność rosnąca
 * **DISTINCT** - unikalne dane
-* **INNER JOIN tabela ON** - złączenie
+
 * **SELECT nazwisko, count(nazwisko) FROM klient GROUP BY nazwisko** - wyświetla listę nazwisk dodając nową kolumnę zliczającą ilość powtórzen danego nazwiska
 * **GROUP BY** - złącza powtórzenia
 * **HAVING count(nazwisko)>1** - wyświetli nazwiska mające powtórzenia
