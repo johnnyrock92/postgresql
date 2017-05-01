@@ -20,6 +20,7 @@
 ###### Dodawanie danych
 * **INSERT INTO test (atrybut1, atrybut2) VALUES ('wartość1','wartość2')** - wypełnia danymi tabelę test
 ```sql
+Przykład:
     - INSERT INTO kod_kreskowy (kod, towar_nr) VALUES ('1234567891234', 14);
     - INSERT INTO kod_kreskowy (kod, towar_nr) VALUES (7894561234567, null);
     - INSERT INTO klient (nazwisko, kod_pocztowy) VALUES (E'O\'Hara', '84-200');
