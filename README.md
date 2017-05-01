@@ -27,6 +27,15 @@
 ```
 ###### Usuwanie tabel
 * **DROP TABLE test** - usuwa tabelę test razem z danymi
+```sql
+    - DROP VIEW towar_zysk;
+    - DROP TABLE kod_kreskowy;
+    - DROP TABLE pozycja;
+    - DROP TABLE zapas;
+    - DROP TABLE zamowienie;
+    - DROP TABLE towar;
+    - DROP TABLE klient;
+```
 ###### Tworzenie zapytań
 * **SELECT * FROM test** - wyświetla/wyciąga wszystkie dane z tabeli test
 * **ORDER BY** - sortowanie
