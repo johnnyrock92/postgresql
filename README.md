@@ -28,7 +28,7 @@
 * **ORDER BY** - sortowanie
 * **DESC** - kolejność malejąca
 * **ASC** - kolejność rosnąca
-* **AS** - tworzy nową kolumnę w której przechowuje np. wynik odejmowania lub dodawania innych kolumn
+* **AS** - tworzy alias (przyjazna nazwa) do kolumny w której przechowuje np. wynik odejmowania lub dodawania innych kolumn
 * **DISTINCT** - unikalne dane
 * **INNER JOIN tabela ON** - złączenie
 * **SELECT nazwisko, count(nazwisko) FROM klient GROUP BY nazwisko** - wyświetla listę nazwisk dodając nową kolumnę zliczającą ilość powtórzen danego nazwiska
