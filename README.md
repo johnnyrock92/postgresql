@@ -1,3 +1,4 @@
 # postgresql
 
-* [test]
+### Polecenia powłoki
+* psql - odpala powłokę Postgresa
