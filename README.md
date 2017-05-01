@@ -22,10 +22,8 @@
 ###### Usuwanie tabel
 * **DROP TABLE test** - usuwa tabelę test razem z danymi
 ###### Tworzenie zapytań
-* [**SELECT * FROM test**](https://github.com/johnnyrock92/postgresql/blob/master/order_by.sql)
-  - wyświetla/wyciąga wszystkie dane z tabeli test
-* [**SELECT * FROM test WHERE imie='Jan'**](https://github.com/johnnyrock92/postgresql/blob/master/order_by.sql)
-  - wyświetla wszystkie dane z tabeli test gdzie atrybut *imie* ma wartość *Jan*
+* [**SELECT * FROM test**](https://github.com/johnnyrock92/postgresql/blob/master/order_by.sql) - wyświetla/wyciąga wszystkie dane z tabeli test
+* [**SELECT * FROM test WHERE imie='Jan'**](https://github.com/johnnyrock92/postgresql/blob/master/order_by.sql) - wyświetla wszystkie dane z tabeli test gdzie atrybut *imie* ma wartość *Jan*
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
 * **UPDATE test SET imie='Piotr' WHERE id=1** - zmienia *imie* w tabeli test w wierszu o *id=1*
 * **ALTER TABLE test ADD COLUMN data** - w tabeli test dodaj kolumnę o nazwie *data*
