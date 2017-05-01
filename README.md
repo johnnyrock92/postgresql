@@ -12,3 +12,8 @@
 * **\d nazwa_tabeli** - wyświetla szczegóły tabeli
 
 ### Polecenia SQL
+* **CREATE TABLE test** - tworzy tabelę o nazwie test
+* **INSERT INTO test (atrybut1, atrybut2) VALUES ('wartość1','wartość2')** - wypełnia danymi tabelę test
+* **DROP TABLE test** - usuwa tabelę test razem z danymi
+* **SELECT * FROM test** - wyświetla/wyciąga wszystkie dane z tabeli test
+* **SELECT * FROM test WHERE imie='Jan'** - wyświetla wszystkie dane z tabeli test gdzie atrybut *imie* ma wartość *Jan*
