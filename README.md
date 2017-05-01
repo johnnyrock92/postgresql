@@ -18,7 +18,6 @@
 * **ON DELETE CASCADE** - usuwając pewien element w innej tabeli, usuwa też dane w tej gdzie zostało to zadeklarowane
 * **REFERENCES test(id)** - tworzy powiązanie aktualnej tabeli z id w tabeli test
 * **UNIQUE (id)** - używamy gdy chcemy , aby atrybut był unikatowy, niepowtarzalny np. id, pesel, nr dowodu osobistego
-
 * **SELECT * FROM test** - wyświetla/wyciąga wszystkie dane z tabeli test
 * **SELECT * FROM test WHERE imie='Jan'** - wyświetla wszystkie dane z tabeli test gdzie atrybut *imie* ma wartość *Jan*
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
