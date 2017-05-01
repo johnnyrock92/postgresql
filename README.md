@@ -19,6 +19,12 @@
 * **UNIQUE (id)** - używamy gdy chcemy , aby atrybut był unikatowy, niepowtarzalny np. id, pesel, nr dowodu osobistego
 ###### Dodawanie danych
 * **INSERT INTO test (atrybut1, atrybut2) VALUES ('wartość1','wartość2')** - wypełnia danymi tabelę test
+```sql
+    - INSERT INTO kod_kreskowy (kod, towar_nr) VALUES ('1234567891234', 14);
+    - INSERT INTO kod_kreskowy (kod, towar_nr) VALUES (7894561234567, null);
+    - INSERT INTO klient (nazwisko, kod_pocztowy) VALUES (E'O\'Hara', '84-200');
+    - INSERT INTO zamowienie (klient_nr, data_zlozenia, koszt_wysylki) VALUES (1, '2017-04-25', '8.99');
+```
 ###### Usuwanie tabel
 * **DROP TABLE test** - usuwa tabelę test razem z danymi
 ###### Tworzenie zapytań
@@ -66,6 +72,7 @@
 ```
 * **GROUP BY** - złącza powtórzenia
 * **HAVING count(nazwisko)>1** - wyświetli nazwiska mające powtórzenia
+* **SELECT nazwisko, count(nazwisko) FROM klient GROUP BY nazwisko** - wyświetla listę nazwisk dodając nową kolumnę zliczającą ilość powtórzen danego nazwiska
 ```sql
     - SELECT cena FROM towar GROUP BY cena HAVING count (cena) > 1;
     - SELECT opis, cena FROM towar WHERE cena IN (SELECT cena FROM towar GROUP BY cena HAVING count (cena) > 1);
@@ -122,6 +129,7 @@
       INNER JOIN towar ON pozycja.towar_nr = towar.nr
       WHERE towar.opis LIKE 'chusteczki%'
       GROUP BY imie, nazwisko;
+
     - SELECT klient.nr, imie, nazwisko,
         sum(ilosc) AS szt_towarów, 
         sum(ilosc * cena) AS suma,
@@ -139,17 +147,31 @@
       GROUP BY klient.nr, imie, nazwisko
       ORDER BY nazwisko;
 ```
-* **DELETE FROM test** - usuwa wszystkie dane z tabeli test
 * **UPDATE test SET imie='Piotr' WHERE id=1** - zmienia *imie* w tabeli test w wierszu o *id=1*
+    - **SET opis = opis||' dodatkowy napis'** - dołącza dodatkowy napis
+```sql
+    - UPDATE towar SET opis = opis||'; brak kodu'
+        WHERE NOT EXISTS (SELECT 1 FROM kod_kreskowy WHERE nr=towar_nr);
+    - UPDATE towar SET opis = opis||'; KOD'
+        WHERE EXISTS (SELECT 1 FROM kod_kreskowy WHERE nr=towar_nr);
+    - UPDATE towar SET cena=(SELECT avg(cena) FROM towar)
+        WHERE cena IS NULL;
+```
+* **DELETE FROM test** - usuwa wszystkie dane z tabeli test
+```sql
+    - DELETE FROM klient WHERE miasto LIKE 'Sopot';
+    - DELETE FROM klient WHERE telefon IS NULL AND NOT EXISTS (SELECT 1 FROM zamowienie WHERE zamowienie.klient_nr=klient.nr);
+    - DELETE FROM kod_kreskowy WHERE towar_nr IS NULL;
+    - DELETE FROM klient WHERE nr NOT IN (SELECT klient_nr FROM zamowienie);
+    - DELETE FROM zamowienie WHERE nr NOT IN (SELECT zamowienie_nr FROM pozycja);
+    - DELETE FROM pozycja WHERE NOT EXISTS (SELECT * FROM kod_kreskowy WHERE pozycja.towar_nr=kod_kreskowy.towar_nr);
+    - DELETE FROM towar WHERE NOT EXISTS (SELECT * FROM kod_kreskowy WHERE towar.nr=kod_kreskowy.towar_nr);
+```
 * **ALTER TABLE test ADD COLUMN data** - w tabeli test dodaj kolumnę o nazwie *data*
 * **ALTER TABLE test DROP COLUMN adres** - w tabeli test usu kolumnę o nazwie *adres*
 * **ALTER TABLE test RENAME COLUMN data TO urodzony** - w tabeli test zmie nazwę kolumny *data* na *urodzony*
 * **DESC** - kolejność malejąca
 * **ASC** - kolejność rosnąca
-
-
-* **SELECT nazwisko, count(nazwisko) FROM klient GROUP BY nazwisko** - wyświetla listę nazwisk dodając nową kolumnę zliczającą ilość powtórzen danego nazwiska
-
 
 
 
