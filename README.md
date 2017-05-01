@@ -39,6 +39,20 @@
     - SELECT *, (data_wysylki-data_zlozenia) AS czas_realizacji FROM zamowienie;
 ```
 * **SELECT * FROM test WHERE imie='Jan'** - wyświetla wszystkie dane z tabeli test gdzie atrybut *imie* ma wartość *Jan*
+    - **WHERE telefon IS NULL** - wyświetli wszystkie wiersze z tabeli test gdzie atrybut *telefon* jest pusty
+    - **WHERE opis LIKE '%piłka%'** - wyświetli wszystkie wiersze z tabeli test gdzie atrybut *opis* zawiera w zdaniu słowo *piłka*
+    - **WHERE NOT miasto='Gdańsk'** - wyświetli wszystkie wiersze z tabeli test gdzie nie występuje w atrybucie *miasto* słowo *Gdansk*
+    - **WHERE data_wysylki BETWEEN '2017/04/01' AND '2017/05/01'** - wyświetli wszystkie wiersze z tabeli zamowienie gdzie atrybut *data_wysylki* to zakres dat od do
+```sql
+    - SELECT * FROM klient WHERE NOT miasto='Gdańsk';
+    - SELECT * FROM klient WHERE telefon IS NULL;
+    - SELECT * FROM klient WHERE NOT miasto='Gdańsk' AND telefon IS NULL;
+    - SELECT * FROM towar WHERE opis LIKE '%układanka%';
+    - SELECT * FROM zamowienie WHERE data_wysylki IS NULL;
+    - SELECT * FROM zamowienie WHERE data_wysylki BETWEEN '2017/02/01' AND '2017/02/28';
+    - SELECT *, (data_wysylki-data_zlozenia) AS czas_realizacji FROM zamowienie WHERE data_wysylki IS NOT NULL;
+```
+
 * **DELETE FROM test** - usuwa wszystkie dane z tabeli test
 * **UPDATE test SET imie='Piotr' WHERE id=1** - zmienia *imie* w tabeli test w wierszu o *id=1*
 * **ALTER TABLE test ADD COLUMN data** - w tabeli test dodaj kolumnę o nazwie *data*
@@ -51,7 +65,6 @@
 * **SELECT nazwisko, count(nazwisko) FROM klient GROUP BY nazwisko** - wyświetla listę nazwisk dodając nową kolumnę zliczającą ilość powtórzen danego nazwiska
 * **GROUP BY** - złącza powtórzenia
 * **HAVING count(nazwisko)>1** - wyświetli nazwiska mające powtórzenia
-* **SELECT * FROM test WHERE NOT miasto='Gdańsk'** - wyświetli wszystkie wiersze z tabeli test gdzie nie występuje w atrybucie *miasto* słowo *Gdansk*
-* **SELECT * FROM test WHERE telefon IS NULL** - wyświetli wszystkie wiersze z tabeli test gdzie atrybut *telefon* jest pusty
-* **SELECT * FROM test WHERE opis LIKE '%piłka%'** - wyświetli wszystkie wiersze z tabeli test gdzie atrybut *opis* zawiera w zdaniu słowo *piłka*
-* **SELECT * FROM zamowienie WHERE data_wysylki BETWEEN '2017/04/01' AND '2017/05/01'** - wyświetli wszystkie wiersze z tabeli zamowienie gdzie atrybut *data_wysylki* to zakres dat od do
+
+
+
