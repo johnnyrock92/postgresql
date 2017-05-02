@@ -79,6 +79,7 @@
         ON klient.nr=zamowienie.klient_nr
         ORDER BY nazwisko;
 ```
+[WIĘCEJ PRZYKŁADÓW INNER JOIN](https://github.com/johnnyrock92/postgresql/blob/master/inner_join.sql)
 * **GROUP BY** - złącza powtórzenia
 * **HAVING count(nazwisko)>1** - wyświetli nazwiska mające powtórzenia
 * **SELECT nazwisko, count(nazwisko) FROM klient GROUP BY nazwisko** - wyświetla listę nazwisk dodając nową kolumnę zliczającą ilość powtórzen danego nazwiska
@@ -116,7 +117,6 @@
             )
       );
 ```
-[WIĘCEJ PRZYKŁADÓW INNER JOIN](https://github.com/johnnyrock92/postgresql/blob/master/inner_join.sql)
 * **min(atrybut)** - zwraca minimalną wartość kolumny
 * **avg(atrybut)** - zwraca średnią wartość kolumny
 * **max(atrybut)** - zwraca maksymalną wartość kolumny
